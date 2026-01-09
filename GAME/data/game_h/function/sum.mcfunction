@@ -24,7 +24,7 @@ execute as @e[type=minecraft:bat,name=10] at @s run summon minecraft:armor_stand
 
 
 
-#moreprocess11
+#moreprocess
 execute as @e[type=armor_stand,tag=this] run scoreboard players set @s life 25
 tag @e[type=armor_stand] remove this
 
