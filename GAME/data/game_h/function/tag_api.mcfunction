@@ -1,1 +1,1 @@
-#hacker是笨蛋
+#hacker
