@@ -10,6 +10,17 @@ execute as @e[type=minecraft:bat,name=7] at @s run clone -2 1 174 9 5 174 ~ ~ ~
 execute as @e[type=minecraft:bat,name=8] at @s run clone -2 1 176 9 5 176 ~ ~ ~
 execute as @e[type=minecraft:bat,name=9] at @s run clone -2 1 178 9 5 178 ~ ~ ~
 execute as @e[type=minecraft:bat,name=10] at @s run clone -2 1 180 9 5 180 ~ ~ ~
+execute as @e[type=minecraft:bat,name=11] at @s run clone -2 1 162 9 5 162 ~ ~ ~
+execute as @e[type=minecraft:bat,name=12] at @s run clone -2 1 164 9 5 164 ~ ~ ~
+execute as @e[type=minecraft:bat,name=13] at @s run clone -2 1 166 9 5 166 ~ ~ ~
+execute as @e[type=minecraft:bat,name=14] at @s run clone -2 1 168 9 5 168 ~ ~ ~
+execute as @e[type=minecraft:bat,name=15] at @s run clone -2 1 170 9 5 170 ~ ~ ~
+execute as @e[type=minecraft:bat,name=16] at @s run clone -2 1 172 9 5 172 ~ ~ ~
+execute as @e[type=minecraft:bat,name=17] at @s run clone -2 1 174 9 5 174 ~ ~ ~
+execute as @e[type=minecraft:bat,name=18] at @s run clone -2 1 176 9 5 176 ~ ~ ~
+execute as @e[type=minecraft:bat,name=19] at @s run clone -2 1 178 9 5 178 ~ ~ ~
+execute as @e[type=minecraft:bat,name=20] at @s run clone -2 1 180 9 5 180 ~ ~ ~
+
 
 execute as @e[type=minecraft:bat,name=1] at @s run summon minecraft:armor_stand ~ ~2 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
 execute as @e[type=minecraft:bat,name=2] at @s run summon minecraft:armor_stand ~ ~4 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
