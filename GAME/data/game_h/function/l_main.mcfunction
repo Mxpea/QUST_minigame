@@ -1,4 +1,4 @@
-#load
+#loadd
 scoreboard objectives remove DISCOUNT
 scoreboard objectives add DISCOUNT dummy "倒计时"
 scoreboard objectives add settings trigger "设置"
