@@ -32,3 +32,17 @@ execute as @e[type=minecraft:armor_stand] if score @s DISCOUNT matches ..0 run s
     #RESET
 execute as @e[type=minecraft:armor_stand] if score @s DISCOUNT matches ..0 run scoreboard players set @s DISCOUNT 5
 #execute if score 1s DISCOUNT matches 0 run scoreboard players set 1s DISCOUNT 5
+
+
+
+
+#START
+tellraw @a[tag=start_setting] [{"text": "==========","color": "gold"},{"text": "[GAME SETTINGS]","color": "green"},{"text": "==========","color": "gold"}]
+tellraw @a[tag=start_setting] [{"text": "[随机分队]","color": "green","click_event": {action:"run_command","command":"/trigger settings set 1"}}]
+tellraw @a[tag=start_setting] [{"text": "==================================","color": "gold"}]
+tag @a remove start_setting
+
+#run
+schedule function game_h:reset 1t replace
+execute as @a if score @s settings matches 1 run function game_h:random_team
+execute as @a if score @s settings matches 1.. run trigger settings set 0
