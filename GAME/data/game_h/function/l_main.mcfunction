@@ -4,11 +4,17 @@ scoreboard objectives add DISCOUNT dummy "倒计时"
 scoreboard objectives add settings trigger "设置"
 scoreboard objectives add life dummy
 scoreboard objectives add reset dummy
+scoreboard objectives add random dummy "随机数"
 
 scoreboard players set 1s DISCOUNT 0
 scoreboard players set setair3 DISCOUNT 0
 
 
+#team
+team add red "红队"
+team add blue "蓝队"
+team empty red
+team empty blue
 
 tellraw @a [{"text": "[","color": "gold"},{"text": "MINIGAME","color": "green"},{"text": "] ","color": "gold"},{"text": "重载成功","color": "blue"}]
 
