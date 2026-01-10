@@ -11,6 +11,8 @@ execute as @e[type=minecraft:armor_stand] at @s if entity @s[tag=poz1] if score 
 execute as @e[type=minecraft:armor_stand] if score @s DISCOUNT matches 1 run scoreboard players set @s reset 3
 execute as @e[type=minecraft:armor_stand] at @s if entity @s[tag=poz1] if score @s reset matches 0 run fill ~ ~-1 ~3 ~ ~-1 ~1 minecraft:air
 
+execute positioned 0 2 2 if block 0 2 2 oak_button[powered=true] if score S_button DISCOUNT matches 0 run tag @p add start_setting
+execute positioned 0 2 2 if block 0 2 2 oak_button[powered=true] if score S_button DISCOUNT matches 0.. run scoreboard players set S_button DISCOUNT 2
 
 
 
@@ -23,6 +25,9 @@ scoreboard players enable @a settings
 
 
 #DISCOUNT
+execute if score S_button DISCOUNT matches 1.. run scoreboard players remove S_button DISCOUNT 1
+
+
 #execute if score setair3 DISCOUNT matches 1.. run scoreboard players remove setair3 DISCOUNT 1
 execute as @e[type=minecraft:armor_stand] if score @s reset matches 1.. run scoreboard players remove @s reset 1
 
@@ -38,11 +43,16 @@ execute as @e[type=minecraft:armor_stand] if score @s DISCOUNT matches ..0 run s
 
 #START
 tellraw @a[tag=start_setting] [{"text": "==========","color": "gold"},{"text": "[GAME SETTINGS]","color": "green"},{"text": "==========","color": "gold"}]
-tellraw @a[tag=start_setting] [{"text": "[随机分队]","color": "green","click_event": {action:"run_command","command":"/trigger settings set 1"}}]
+tellraw @a[tag=start_setting] [{"text": "[随机分队]   ","color": "green","click_event": {action:"run_command","command":"/trigger settings set 1"}},{"text": "[开始游戏]","color": "green","click_event": {action:"run_command","command":"/trigger settings set 2"}}]
 tellraw @a[tag=start_setting] [{"text": "==================================","color": "gold"}]
 tag @a remove start_setting
 
 #run
+ #1
 schedule function game_h:reset 1t replace
 execute as @a if score @s settings matches 1 run function game_h:random_team
-execute as @a if score @s settings matches 1.. run trigger settings set 0
+ #2
+execute as @a if score @s settings matches 2 run tp @s 4.00 1.00 133.00
+
+
+scoreboard players set @a settings 0
