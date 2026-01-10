@@ -8,6 +8,7 @@ scoreboard objectives add random dummy "随机数"
 
 scoreboard players set 1s DISCOUNT 0
 scoreboard players set setair3 DISCOUNT 0
+scoreboard players set S_button DISCOUNT 0
 
 
 #team
@@ -19,7 +20,8 @@ team empty blue
 tellraw @a [{"text": "[","color": "gold"},{"text": "MINIGAME","color": "green"},{"text": "] ","color": "gold"},{"text": "重载成功","color": "blue"}]
 
 #start
-tellraw @a [{"text": "==========","color": "gold"},{"text": "[GAME SETTINGS]","color": "green"},{"text": "==========","color": "gold"}]
+tellraw @a [{"text": "==========","color": "gold"},{"text": "[D  E  B  U  G]","color": "yellow"},{"text": "==========","color": "gold"}]
+tellraw @a [{"text": "[setting]   ","color": "green","click_event": {action:"run_command","command":"/tag @p add start_setting"}}]
 tellraw @a [{"text": "==========","color": "gold"},{"text": "[DANGER   ZONE]","color": "red"},{"text": "==========","color": "gold"}]
-tellraw @a [{"text": "[kill ARMOR_STAND]","color":"red","clickEvent":{"action":"run_command","value":"/kill @e[type=minecraft:armor_stand]"}}]
+tellraw @a [{"text": "[kill ARMOR_STAND]","color":"red","click_event": {action:"run_command","command":"/kill @e[type=minecraft:armor_stand]"}}]
 tellraw @a [{"text": "==================================","color": "gold"}]
