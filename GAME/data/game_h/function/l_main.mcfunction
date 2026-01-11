@@ -5,6 +5,7 @@ scoreboard objectives add settings trigger "设置"
 scoreboard objectives add life dummy
 scoreboard objectives add reset dummy
 scoreboard objectives add random dummy "随机数"
+scoreboard objectives add platform dummy "平台"
 
 scoreboard players set 1s DISCOUNT 0
 scoreboard players set setair3 DISCOUNT 0
