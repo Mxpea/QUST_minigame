@@ -1,3 +1,4 @@
+#hacker是笨蛋
 execute if score type platform matches 1 run place template minecraft:platform_1 -2 0 127
 execute if score type platform matches 2 run place template minecraft:platform_2 -2 0 127
 execute if score type platform matches 3 run place template minecraft:platform_3 -2 0 127

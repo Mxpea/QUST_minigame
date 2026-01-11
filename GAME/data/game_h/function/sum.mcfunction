@@ -1,5 +1,6 @@
 
 #locate&clone
+#hacker是笨蛋
 execute as @e[type=minecraft:bat,tag=1] at @s run clone -2 1 162 9 5 162 ~ ~ ~
 execute as @e[type=minecraft:bat,tag=1] at @s run summon minecraft:armor_stand ~ ~2 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
 
@@ -46,7 +47,7 @@ execute as @e[type=minecraft:bat,tag=15] at @s run clone -2 1 190 9 5 190 ~ ~ ~
 execute as @e[type=minecraft:bat,tag=15] at @s run summon minecraft:armor_stand ~ ~4 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
 
 execute as @e[type=minecraft:bat,tag=16] at @s run clone -2 1 192 9 5 192 ~ ~ ~
-execute as @e[type=minecraft:bat,tag=16] at @s run summon minecraft:armor_stand ~ ~2 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
+execute as @e[type=minecraft:bat,tag=16] at @s run summon minecraft:armor_stand ~ ~4 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
 
 execute as @e[type=minecraft:bat,tag=17] at @s run clone -2 1 194 9 5 194 ~ ~ ~
 execute as @e[type=minecraft:bat,tag=17] at @s run summon minecraft:armor_stand ~ ~4 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
@@ -55,7 +56,7 @@ execute as @e[type=minecraft:bat,tag=18] at @s run clone -2 1 196 9 5 196 ~ ~ ~
 execute as @e[type=minecraft:bat,tag=18] at @s run summon minecraft:armor_stand ~ ~4 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
 
 execute as @e[type=minecraft:bat,tag=19] at @s run clone -2 1 198 9 5 198 ~ ~ ~
-execute as @e[type=minecraft:bat,tag=19] at @s run summon minecraft:armor_stand ~ ~4 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
+execute as @e[type=minecraft:bat,tag=19] at @s run summon minecraft:armor_stand ~ ~2 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
 
 execute as @e[type=minecraft:bat,tag=20] at @s run clone -2 1 200 9 5 200 ~ ~ ~
 execute as @e[type=minecraft:bat,tag=20] at @s run summon minecraft:armor_stand ~ ~4 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}

@@ -1,4 +1,5 @@
 #load
+#hacker是笨蛋
 execute store result score wall random run random value 1..20
 
 execute if score wall random matches 1 run summon minecraft:bat -2 1 145 {Tags:["1"]}
