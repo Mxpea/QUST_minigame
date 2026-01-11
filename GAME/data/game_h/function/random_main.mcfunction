@@ -1,5 +1,6 @@
 #load
-execute store result score wall random run random value 1..14
+#hacker是笨蛋
+execute store result score wall random run random value 1..20
 
 execute if score wall random matches 1 run summon minecraft:bat -2 1 145 {Tags:["1"]}
 execute if score wall random matches 2 run summon minecraft:bat -2 1 145 {Tags:["2"]}
@@ -15,3 +16,10 @@ execute if score wall random matches 11 run summon minecraft:bat -2 1 145 {Tags:
 execute if score wall random matches 12 run summon minecraft:bat -2 1 145 {Tags:["12"]}
 execute if score wall random matches 13 run summon minecraft:bat -2 1 145 {Tags:["13"]}
 execute if score wall random matches 14 run summon minecraft:bat -2 1 145 {Tags:["14"]}
+execute if score wall random matches 15 run summon minecraft:bat -2 1 145 {Tags:["15"]}
+execute if score wall random matches 16 run summon minecraft:bat -2 1 145 {Tags:["16"]}
+execute if score wall random matches 17 run summon minecraft:bat -2 1 145 {Tags:["17"]}
+execute if score wall random matches 18 run summon minecraft:bat -2 1 145 {Tags:["18"]}
+execute if score wall random matches 19 run summon minecraft:bat -2 1 145 {Tags:["19"]}
+execute if score wall random matches 20 run summon minecraft:bat -2 1 145 {Tags:["20"]}
+
