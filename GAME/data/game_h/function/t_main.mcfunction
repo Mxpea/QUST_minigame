@@ -55,6 +55,7 @@ scoreboard players enable @a settings
 
 ##wall
 execute if score cylc DISCOUNT matches 1 if score time DISCOUNT matches 1..3661 run function game_h:random_main
+execute if score cylc DISCOUNT matches 1 if score time DISCOUNT matches 1..3661 run function game_h:random_effect
 execute if score cylc DISCOUNT matches 0 run scoreboard players set cylc DISCOUNT 40
 
 
@@ -78,6 +79,7 @@ execute as @e[type=minecraft:armor_stand] run scoreboard players remove @s DISCO
 execute as @e[type=minecraft:armor_stand] if score @s DISCOUNT matches ..0 run scoreboard players remove @s life 1
     #RESET
 execute as @e[type=minecraft:armor_stand] if score @s DISCOUNT matches ..0 run scoreboard players set @s DISCOUNT 5
+execute if score time DISCOUNT matches 0 run effect clear @a[tag=!exclude]
 #execute if score 1s DISCOUNT matches 0 run scoreboard players set 1s DISCOUNT 5
 
 
@@ -86,10 +88,20 @@ execute as @e[type=minecraft:armor_stand] if score @s DISCOUNT matches ..0 run s
 
 
 
+#faild
+execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run summon lightning_bolt
+execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run tp @s 2.39 33.00 134.67
 
 
 
 
+
+
+
+
+#???
+setblock 2 33 126 minecraft:oak_wall_sign[facing=south,waterlogged=false]{back_text:{color:"black",has_glowing_text:0b,messages:["","","",""]},components:{},front_text:{color:"black",has_glowing_text:0b,messages:["↑","gay","",""]},is_waxed:0b}
+setblock 2 34 125 minecraft:player_head[rotation=8]{profile:{name:"this_hacker"}}
 
 
 

@@ -66,7 +66,7 @@ execute as @e[type=armor_stand,tag=this] run scoreboard players set @s life 25
 tag @e[type=armor_stand] remove this
 
 execute as @e[type=minecraft:armor_stand] at @s if entity @s[tag=poz1] if score @s life matches 0 run fill ~ ~-1 ~4 ~ ~-1 ~2 minecraft:air
-execute as @e[type=minecraft:armor_stand] at @s if entity @s[tag=poz1] if score @s life matches 0 run fill ~12 ~15 ~ ~-12 ~-15 ~2 minecraft:air destroy
+execute as @e[type=minecraft:armor_stand] at @s if entity @s[tag=poz1] if score @s life matches 0 run fill ~12 ~15 ~ ~-5 ~-15 ~2 minecraft:air destroy
 
 #kill
 kill @e[type=armor_stand,scores={life=0}]

@@ -15,7 +15,15 @@ scoreboard players set S_button DISCOUNT 0
 scoreboard players set cylc DISCOUNT 0
 scoreboard players set time_s DISCOUNT 0
 scoreboard players set 20 C 20
+scoreboard players set effect random 0
 
+title @a times 0 40t 0
+
+gamerule fall_damage false
+gamerule fire_damage false
+gamerule mob_drops false
+gamerule mob_griefing false
+gamerule advance_time false
 
 #team
 team add red "红队"
@@ -27,6 +35,8 @@ team modify red color red
 team modify blue color blue
 team modify red collisionRule never
 team modify blue collisionRule never
+
+tag @a remove exclude
 
 tellraw @a [{"text": "[","color": "gold"},{"text": "MINIGAME","color": "green"},{"text": "] ","color": "gold"},{"text": "重载成功","color": "blue"}]
 
