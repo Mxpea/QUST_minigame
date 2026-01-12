@@ -26,23 +26,23 @@ execute if score start1 settings matches 1 run scoreboard players set time DISCO
 execute if score time DISCOUNT matches 3661 run scoreboard players set type platform 1
 execute if score time DISCOUNT matches 3601 run scoreboard players set type platform 5
 
-execute if score time DISCOUNT matches 2461 run scoreboard players set type platform 2
-execute if score time DISCOUNT matches 2461 as @a at @s run playsound minecraft:block.note_block.bit player @a ~ ~ ~ 10 2
-execute if score time DISCOUNT matches 2461 run title @a actionbar [{"text":"平台红色区域将在 ","color":"gold"},{"text":"3","color":"red"},{"text":" 秒后坍塌","color":"gold"}]
-execute if score time DISCOUNT matches 2401 run scoreboard players set type platform 5
-execute if score time DISCOUNT matches 2401 as @a at @s run playsound minecraft:entity.zombie.break_wooden_door player @a ~ ~ ~ 0.5
+execute if score time DISCOUNT matches 3061 run scoreboard players set type platform 2
+execute if score time DISCOUNT matches 3061 as @a at @s run playsound minecraft:block.note_block.bit player @a ~ ~ ~ 10 2
+execute if score time DISCOUNT matches 3001..3061 run title @a actionbar [{"text":"平台红色区域将在 ","color":"gold"},{"text":"3","color":"red"},{"text":" 秒后坍塌","color":"gold"}]
+execute if score time DISCOUNT matches 3001 run scoreboard players set type platform 5
+execute if score time DISCOUNT matches 3001 as @a at @s run playsound minecraft:entity.zombie.break_wooden_door player @a ~ ~ ~ 0.5
 
-execute if score time DISCOUNT matches 1261 run scoreboard players set type platform 3
-execute if score time DISCOUNT matches 1261 as @a at @s run playsound minecraft:block.note_block.bit player @a ~ ~ ~ 10 2
-execute if score time DISCOUNT matches 1261 run title @a actionbar [{"text":"平台红色区域将在 ","color":"gold"},{"text":"3","color":"red"},{"text":" 秒后坍塌","color":"gold"}]
-execute if score time DISCOUNT matches 1201 run scoreboard players set type platform 5
-execute if score time DISCOUNT matches 1201 as @a at @s run playsound minecraft:entity.zombie.break_wooden_door player @a ~ ~ ~ 0.5
+execute if score time DISCOUNT matches 1861 run scoreboard players set type platform 3
+execute if score time DISCOUNT matches 1861 as @a at @s run playsound minecraft:block.note_block.bit player @a ~ ~ ~ 10 2
+execute if score time DISCOUNT matches 1801..1861 run title @a actionbar [{"text":"平台红色区域将在 ","color":"gold"},{"text":"3","color":"red"},{"text":" 秒后坍塌","color":"gold"}]
+execute if score time DISCOUNT matches 1801 run scoreboard players set type platform 5
+execute if score time DISCOUNT matches 1801 as @a at @s run playsound minecraft:entity.zombie.break_wooden_door player @a ~ ~ ~ 0.5
 
-execute if score time DISCOUNT matches 61 run scoreboard players set type platform 4
-execute if score time DISCOUNT matches 61 as @a at @s run playsound minecraft:block.note_block.bit player @a ~ ~ ~ 10 2
-execute if score time DISCOUNT matches 61 run title @a actionbar [{"text":"平台红色区域将在 ","color":"gold"},{"text":"3","color":"red"},{"text":" 秒后坍塌","color":"gold"}]
-execute if score time DISCOUNT matches 1 run scoreboard players set type platform 5
-execute if score time DISCOUNT matches 1 as @a at @s run playsound minecraft:entity.zombie.break_wooden_door player @a ~ ~ ~ 0.5
+execute if score time DISCOUNT matches 661 run scoreboard players set type platform 4
+execute if score time DISCOUNT matches 661 as @a at @s run playsound minecraft:block.note_block.bit player @a ~ ~ ~ 10 2
+execute if score time DISCOUNT matches 601..661 run title @a actionbar [{"text":"平台红色区域将在 ","color":"gold"},{"text":"3","color":"red"},{"text":" 秒后坍塌","color":"gold"}]
+execute if score time DISCOUNT matches 601 run scoreboard players set type platform 5
+execute if score time DISCOUNT matches 601 as @a at @s run playsound minecraft:entity.zombie.break_wooden_door player @a ~ ~ ~ 0.5
 
 
 function game_h:platform
@@ -62,7 +62,13 @@ execute if score cylc DISCOUNT matches 0 run scoreboard players set cylc DISCOUN
 execute if score S_button DISCOUNT matches 1.. run scoreboard players remove S_button DISCOUNT 1
 execute if score time DISCOUNT matches 1.. run scoreboard players remove time DISCOUNT 1
 execute if score cylc DISCOUNT matches 1.. run scoreboard players remove cylc DISCOUNT 1
+scoreboard players operation time_s DISCOUNT = time DISCOUNT
+scoreboard players operation time_s DISCOUNT /= 20 C
 
+execute if score time DISCOUNT matches 3062.. run title @a actionbar [{"text":"游戏时间剩余: ","color":"gold"},{"text":""},{"score":{"name":"time_s","objective":"DISCOUNT"},"color":"yellow"},{"text":" 秒","color":"gold"}]
+execute if score time DISCOUNT matches 1862..3000 run title @a actionbar [{"text":"游戏时间剩余: ","color":"gold"},{"text":""},{"score":{"name":"time_s","objective":"DISCOUNT"},"color":"yellow"},{"text":" 秒","color":"gold"}]
+execute if score time DISCOUNT matches 662..1800 run title @a actionbar [{"text":"游戏时间剩余: ","color":"gold"},{"text":""},{"score":{"name":"time_s","objective":"DISCOUNT"},"color":"yellow"},{"text":" 秒","color":"gold"}]
+execute if score time DISCOUNT matches 1..600 run title @a actionbar [{"text":"游戏时间剩余: ","color":"gold"},{"text":""},{"score":{"name":"time_s","objective":"DISCOUNT"},"color":"yellow"},{"text":" 秒","color":"gold"}]
 
 #execute if score setair3 DISCOUNT matches 1.. run scoreboard players remove setair3 DISCOUNT 1
 execute as @e[type=minecraft:armor_stand] if score @s reset matches 1.. run scoreboard players remove @s reset 1

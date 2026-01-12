@@ -7,11 +7,14 @@ scoreboard objectives add life dummy
 scoreboard objectives add reset dummy
 scoreboard objectives add random dummy "随机数"
 scoreboard objectives add platform dummy "平台"
+scoreboard objectives add C dummy
 
 scoreboard players set 1s DISCOUNT 0
 scoreboard players set setair3 DISCOUNT 0
 scoreboard players set S_button DISCOUNT 0
 scoreboard players set cylc DISCOUNT 0
+scoreboard players set time_s DISCOUNT 0
+scoreboard players set 20 C 20
 
 
 #team
