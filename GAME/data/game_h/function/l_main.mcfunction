@@ -39,6 +39,7 @@ team modify blue collisionRule never
 tag @a remove exclude
 
 tellraw @a [{"text": "[","color": "gold"},{"text": "MINIGAME","color": "green"},{"text": "] ","color": "gold"},{"text": "重载成功","color": "blue"}]
+tellraw @a [{"text": "[","color": "gold"},{"text": "MINIGAME","color": "green"},{"text": "] ","color": "gold"},{"text": "POWERED BY ","color": "gold"},{"text": "[MMMAPI]","color": "yellow",click_event: {action:"open_url",url:"https://github.com/Mxpea/Mxpea-s-Multiplayer-Motion-API"}}]
 
 #start
 tellraw @a [{"text": "==========","color": "gold"},{"text": "[D  E  B  U  G]","color": "yellow"},{"text": "==========","color": "gold"}]
