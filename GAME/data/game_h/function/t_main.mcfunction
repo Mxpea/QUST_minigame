@@ -90,9 +90,16 @@ execute if score time DISCOUNT matches 0 run effect clear @a[tag=!exclude]
 
 #faild
 execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run summon lightning_bolt
+execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run tag @s add spectator
 execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run tp @s 2.39 33.00 134.67
 
+#end game
+    #时间结束终止游戏
+execute if score time DISCOUNT matches 1 run schedule function game_h:end_game 10s
+    #场上仅剩一人结束
 
+execute store result score playercount C run execute if entity @a[tag=!spectator,limit=2]
+execute if score playercount C matches 1 if score time DISCOUNT matches 1.. run function game_h:end_game
 
 
 
@@ -123,6 +130,7 @@ execute as @a if score @s settings matches 2 run tp @a 4.00 1.00 133.00
 execute as @a if score @s settings matches 2 run gamemode adventure @a
 execute as @a if score @s settings matches 2 run scoreboard players set start_delay DISCOUNT 61
 execute as @a if score @s settings matches 2 run place template minecraft:platform_1 -2 0 127
+execute as @a if score @s settings matches 2 run tag @a remove spectator
   #2.1 title
   execute if score start_delay DISCOUNT matches 61 run title @a title [{"text":"墙壁将在","color":"gold"},{"text":" 3 ","color":"red"},{"text":"秒后推出!","color":"gold"}]
   execute if score start_delay DISCOUNT matches 61 as @a at @s run playsound ui.button.click player @a ~ ~ ~
