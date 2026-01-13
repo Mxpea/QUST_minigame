@@ -99,6 +99,7 @@ execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run tp @s 
 
 
 
+
 #???
 setblock 2 33 126 minecraft:oak_wall_sign[facing=south,waterlogged=false]{back_text:{color:"black",has_glowing_text:0b,messages:["","","",""]},components:{},front_text:{color:"black",has_glowing_text:0b,messages:["↑","gay","",""]},is_waxed:0b}
 setblock 2 34 125 minecraft:player_head[rotation=8]{profile:{name:"this_hacker"}}
@@ -118,9 +119,27 @@ tag @a remove start_setting
 schedule function game_h:reset 1t replace
 execute as @a if score @s settings matches 1 run function game_h:random_team
  #2 开始游戏
-execute as @a if score @s settings matches 2 run tp @s 4.00 1.00 133.00
-execute as @a if score @s settings matches 2 run scoreboard players set start1 settings 1
-execute as @a if score @s settings matches 2 run effect give @a jump_boost infinite 1 true
+execute as @a if score @s settings matches 2 run tp @a 4.00 1.00 133.00
+execute as @a if score @s settings matches 2 run gamemode adventure @a
+execute as @a if score @s settings matches 2 run scoreboard players set start_delay DISCOUNT 61
+execute as @a if score @s settings matches 2 run place template minecraft:platform_1 -2 0 127
+  #2.1 title
+  execute if score start_delay DISCOUNT matches 61 run title @a title [{"text":"墙壁将在","color":"gold"},{"text":" 3 ","color":"red"},{"text":"秒后推出!","color":"gold"}]
+  execute if score start_delay DISCOUNT matches 61 as @a at @s run playsound ui.button.click player @a ~ ~ ~
+  execute if score start_delay DISCOUNT matches 41 run title @a title [{"text":"墙壁将在","color":"gold"},{"text":" 2 ","color":"red"},{"text":"秒后推出!","color":"gold"}]
+  execute if score start_delay DISCOUNT matches 41 as @a at @s run playsound ui.button.click player @a ~ ~ ~
+  execute if score start_delay DISCOUNT matches 21 run title @a title [{"text":"墙壁将在","color":"gold"},{"text":" 1 ","color":"red"},{"text":"秒后推出!","color":"gold"}]
+  execute if score start_delay DISCOUNT matches 21 as @a at @s run playsound ui.button.click player @a ~ ~ ~
+  execute if score start_delay DISCOUNT matches 1 run title @a title [{"text":"墙壁已经推出!","color":"red"}]
+  execute if score start_delay DISCOUNT matches 1 as @a at @s run playsound ui.button.click player @a ~ ~ ~
+
+
+execute if score start_delay DISCOUNT matches 1 run scoreboard players set start1 settings 1
+execute if score start_delay DISCOUNT matches 1 run effect give @a jump_boost infinite 1 true
+  #2.2 DISCOUNT
+
+execute if score start_delay DISCOUNT matches 1.. run scoreboard players remove start_delay DISCOUNT 1
+
  #3 取消分队
 execute as @a if score @s settings matches 3 run team empty blue
 execute as @a if score @s settings matches 3 run team empty red

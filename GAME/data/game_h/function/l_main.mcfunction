@@ -16,6 +16,7 @@ scoreboard players set cylc DISCOUNT 0
 scoreboard players set time_s DISCOUNT 0
 scoreboard players set 20 C 20
 scoreboard players set effect random 0
+scoreboard players set start_delay DISCOUNT 0
 
 title @a times 0 40t 0
 
