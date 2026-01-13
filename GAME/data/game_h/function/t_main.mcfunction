@@ -69,7 +69,8 @@ scoreboard players operation time_s DISCOUNT /= 20 C
 execute if score time DISCOUNT matches 3062.. run title @a actionbar [{"text":"游戏时间剩余: ","color":"gold"},{"text":""},{"score":{"name":"time_s","objective":"DISCOUNT"},"color":"yellow"},{"text":" 秒","color":"gold"}]
 execute if score time DISCOUNT matches 1862..3000 run title @a actionbar [{"text":"游戏时间剩余: ","color":"gold"},{"text":""},{"score":{"name":"time_s","objective":"DISCOUNT"},"color":"yellow"},{"text":" 秒","color":"gold"}]
 execute if score time DISCOUNT matches 662..1800 run title @a actionbar [{"text":"游戏时间剩余: ","color":"gold"},{"text":""},{"score":{"name":"time_s","objective":"DISCOUNT"},"color":"yellow"},{"text":" 秒","color":"gold"}]
-execute if score time DISCOUNT matches 1..600 run title @a actionbar [{"text":"游戏时间剩余: ","color":"gold"},{"text":""},{"score":{"name":"time_s","objective":"DISCOUNT"},"color":"yellow"},{"text":" 秒","color":"gold"}]
+execute if score time DISCOUNT matches 2..600 run title @a actionbar [{"text":"游戏时间剩余: ","color":"gold"},{"text":""},{"score":{"name":"time_s","objective":"DISCOUNT"},"color":"yellow"},{"text":" 秒","color":"gold"}]
+execute if score time DISCOUNT matches 1 run title @a actionbar [{"text":"正在等待场地清空...","color":"gold"}]
 
 #execute if score setair3 DISCOUNT matches 1.. run scoreboard players remove setair3 DISCOUNT 1
 execute as @e[type=minecraft:armor_stand] if score @s reset matches 1.. run scoreboard players remove @s reset 1
@@ -95,7 +96,7 @@ execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run tp @s 
 
 #end game
     #时间结束终止游戏
-execute if score time DISCOUNT matches 1 run schedule function game_h:end_game 10s
+execute if score time DISCOUNT matches 1 run schedule function game_h:end_game 6s
     #场上仅剩一人结束
 
 execute store result score playercount C run execute if entity @a[tag=!spectator,limit=2]
