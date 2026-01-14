@@ -2,6 +2,19 @@
 effect give @a minecraft:saturation infinite 1 true
 
 
+#DEBUGt
+tellraw @a[tag=debug_h] [{"text": "==========","color": "gold"},{"text": "[D  E  B  U  G]","color": "yellow"},{"text": "==========","color": "gold"}]
+tellraw @a[tag=debug_h] [{"text": "[setting]   ","color": "green","click_event": {action:"run_command","command":"/tag @p add start_setting"}}]
+tellraw @a[tag=debug_h] [{"text": "==========","color": "gold"},{"text": "[DANGER   ZONE]","color": "red"},{"text": "==========","color": "gold"}]
+tellraw @a[tag=debug_h] [{"text": "[kill ARMOR_STAND]   ","color":"red","click_event": {action:"run_command","command":"/kill @e[type=minecraft:armor_stand]"}},{"text": "[RUN Load]   ","color":"red","click_event": {action:"run_command","command":"/function #minecraft:load"}}]
+tellraw @a[tag=debug_h] [{"text": "[run push]        ","color":"red","click_event": {action:"run_command","command":"/function game_h:random_main"}},{"text": "[run timer]   ","color":"red","click_event": {action:"run_command","command":"/scoreboard players set start1 settings 1"}}]
+tellraw @a[tag=debug_h] [{"text": "==================================","color": "gold"}]
+tag @a remove debug_h
+
+
+
+
+
 #hacker是笨蛋
 #LOCATE&SETBLOCK
 execute as @e[type=minecraft:armor_stand] at @s if entity @s[tag=poz1] if score @s DISCOUNT matches 1 run setblock ~ ~-1 ~1 minecraft:piston
