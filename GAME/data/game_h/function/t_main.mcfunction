@@ -115,7 +115,8 @@ execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run tp @s 
 execute if score time DISCOUNT matches 1 run schedule function game_h:end_game 6s
     #场上仅剩一人结束
 execute store result score playercount C run execute if entity @a[tag=!spectator,limit=2]
-execute if score playercount C matches 1 if score time DISCOUNT matches 1.. run function game_h:end_game
+execute if score playercount C matches 0 if score time DISCOUNT matches 1.. run function game_h:end_game
+execute if score playercount C matches 1 if score time DISCOUNT matches 1.. run tag @a[tag=!spectator] add winner
 
 
 
