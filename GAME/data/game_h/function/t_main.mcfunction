@@ -155,6 +155,7 @@ execute if score start_delay DISCOUNT matches 1.. run scoreboard players remove 
  #3 取消分队
 execute as @a if score @s settings matches 3 run team empty blue
 execute as @a if score @s settings matches 3 run team empty red
+execute as @a if score @s settings matches 3 run team join default @a
  #10 加入蓝队
 execute as @a if score @s settings matches 10 run team join blue @s
  #11 加入红队

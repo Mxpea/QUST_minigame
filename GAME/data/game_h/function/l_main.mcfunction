@@ -30,13 +30,17 @@ gamerule advance_time false
 #team
 team add red "红队"
 team add blue "蓝队"
+team add default "无队伍"
 team empty red
 team empty blue
+
+team join default @a
 
 team modify red color red
 team modify blue color blue
 team modify red collisionRule never
 team modify blue collisionRule never
+team modify default collisionRule never
 
 tag @a remove exclude
 
