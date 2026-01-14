@@ -118,7 +118,7 @@ setblock 2 34 125 minecraft:player_head[rotation=8]{profile:{name:"this_hacker"}
 #START
 tellraw @a[tag=start_setting] [{"text": "===========","color": "gold"},{"text": "[GAME SETTINGS]","color": "green"},{"text": "===========","color": "gold"}]
 tellraw @a[tag=start_setting] [{"text": "[随机分队]   ","color": "green","click_event": {action:"run_command","command":"/trigger settings set 1"}},{"text": "[开始游戏]   ","color": "green","click_event": {action:"run_command","command":"/trigger settings set 2"}},{"text": "[取消分队]","color": "green","click_event": {action:"run_command","command":"/trigger settings set 3"}}]
-tellraw @a[tag=start_setting] [{"text": "[加入蓝队]   ","color": "green","click_event": {action:"run_command","command":"/trigger settings set 10"}},{"text": "[加入红队]","color": "green","click_event": {action:"run_command","command":"/trigger settings set 11"}}]
+tellraw @a[tag=start_setting] [{"text": "[加入蓝队]   ","color": "green","click_event": {action:"run_command","command":"/trigger settings set 10"}},{"text": "[加入红队]   ","color": "green","click_event": {action:"run_command","command":"/trigger settings set 11"}},{"text": "[清空得分]","color": "red","click_event": {action:"run_command","command":"/trigger settings set 12"}}]
 tellraw @a[tag=start_setting] [{"text": "====================================","color": "gold"}]
 tag @a remove start_setting
 
@@ -133,7 +133,7 @@ execute as @a if score @s settings matches 2 if score playercount C matches 2 ru
 execute as @a if score @s settings matches 2 if score playercount C matches 2 run place template minecraft:platform_1 -2 0 127
 execute as @a if score @s settings matches 2 if score playercount C matches 2 run tag @a remove spectator
 
-execute as @a if score @s settings matches 2 if score playercount C matches 1 run tellraw @a [{"text":"无法开始游戏，场上玩家不足2人!","color":"red"}]
+execute as @a if score @s settings matches 2 if score playercount C matches 1 run tellraw @a [{"text":"无法开始游戏,场上玩家不足2人!","color":"red"}]
 
   #2.1 title
   execute if score start_delay DISCOUNT matches 61 run title @a title [{"text":"墙壁将在","color":"gold"},{"text":" 3 ","color":"red"},{"text":"秒后推出!","color":"gold"}]
@@ -143,7 +143,7 @@ execute as @a if score @s settings matches 2 if score playercount C matches 1 ru
   execute if score start_delay DISCOUNT matches 21 run title @a title [{"text":"墙壁将在","color":"gold"},{"text":" 1 ","color":"red"},{"text":"秒后推出!","color":"gold"}]
   execute if score start_delay DISCOUNT matches 21 as @a at @s run playsound ui.button.click player @a ~ ~ ~
   execute if score start_delay DISCOUNT matches 1 run title @a title [{"text":"墙壁已经推出!","color":"red"}]
-  execute if score start_delay DISCOUNT matches 1 as @a at @s run playsound ui.button.click player @a ~ ~ ~
+  execute if score start_delay DISCOUNT matches 1 as @a at @s run playsound entity.firework_rocket.launch player @a ~ ~ ~
 
 
 execute if score start_delay DISCOUNT matches 1 run scoreboard players set start1 settings 1
@@ -160,6 +160,9 @@ execute as @a if score @s settings matches 3 run team join default @a
 execute as @a if score @s settings matches 10 run team join blue @s
  #11 加入红队
 execute as @a if score @s settings matches 11 run team join red @s
+  #12 清空得分
+execute as @a if score @s settings matches 12 run tellraw @s [{"text":"[点击此处确认]","color":"yellow","click_event": {action:"run_command","command":"scoreboard players set @a score 0"}},{"text":" 清空得分后将无法恢复！你确定要这么干吗?  此操作需要管理员权限.","color":"red"}]
+
 
 
 

@@ -8,6 +8,7 @@ scoreboard objectives add reset dummy
 scoreboard objectives add random dummy "随机数"
 scoreboard objectives add platform dummy "平台"
 scoreboard objectives add C dummy
+scoreboard objectives add score dummy "得分"
 
 scoreboard players set 1s DISCOUNT 0
 scoreboard players set setair3 DISCOUNT 0
@@ -18,6 +19,8 @@ scoreboard players set 20 C 20
 scoreboard players set effect random 0
 scoreboard players set start_delay DISCOUNT 0
 scoreboard players set playercount C 0
+
+scoreboard objectives setdisplay sidebar score
 
 title @a times 0 40t 0
 
