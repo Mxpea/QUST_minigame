@@ -179,6 +179,7 @@ execute as @a if score @s settings matches 11 run team join red @s
 execute as @a if score @s settings matches 12 run tellraw @s [{"text":"[点击此处确认]","color":"yellow","click_event": {action:"run_command","command":"/tag @s add clear_score"}},{"text":" 清空得分后将无法恢复！你确定要这么干吗?  此操作需要管理员权限.","color":"red"}]
 execute as @a[tag=clear_score] run scoreboard objectives remove score
 execute as @a[tag=clear_score] run scoreboard objectives add score dummy "得分"
+execute as @a[tag=clear_score] run scoreboard objectives setdisplay sidebar score
 execute as @a[tag=clear_score] run tag @s remove clear_score
 
 scoreboard players set @a settings 0
