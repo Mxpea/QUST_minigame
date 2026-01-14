@@ -2,6 +2,19 @@
 effect give @a minecraft:saturation infinite 1 true
 
 
+#DEBUGt
+tellraw @a[tag=debug_h] [{"text": "==========","color": "gold"},{"text": "[D  E  B  U  G]","color": "yellow"},{"text": "==========","color": "gold"}]
+tellraw @a[tag=debug_h] [{"text": "[setting]   ","color": "green","click_event": {action:"run_command","command":"/tag @p add start_setting"}}]
+tellraw @a[tag=debug_h] [{"text": "==========","color": "gold"},{"text": "[DANGER   ZONE]","color": "red"},{"text": "==========","color": "gold"}]
+tellraw @a[tag=debug_h] [{"text": "[kill ARMOR_STAND]   ","color":"red","click_event": {action:"run_command","command":"/kill @e[type=minecraft:armor_stand]"}},{"text": "[RUN Load]   ","color":"red","click_event": {action:"run_command","command":"/function #minecraft:load"}}]
+tellraw @a[tag=debug_h] [{"text": "[run push]        ","color":"red","click_event": {action:"run_command","command":"/function game_h:random_main"}},{"text": "[run timer]   ","color":"red","click_event": {action:"run_command","command":"/scoreboard players set start1 settings 1"}}]
+tellraw @a[tag=debug_h] [{"text": "==================================","color": "gold"}]
+tag @a remove debug_h
+
+
+
+
+
 #hacker是笨蛋
 #LOCATE&SETBLOCK
 execute as @e[type=minecraft:armor_stand] at @s if entity @s[tag=poz1] if score @s DISCOUNT matches 1 run setblock ~ ~-1 ~1 minecraft:piston
@@ -53,6 +66,7 @@ scoreboard players set start1 settings 0
 
 #OTHER
 scoreboard players enable @a settings
+function game_h:fancy_visiual
 
 
 ##wall
@@ -162,9 +176,10 @@ execute as @a if score @s settings matches 10 run team join blue @s
  #11 加入红队
 execute as @a if score @s settings matches 11 run team join red @s
   #12 清空得分
-execute as @a if score @s settings matches 12 run tellraw @s [{"text":"[点击此处确认]","color":"yellow","click_event": {action:"run_command","command":"scoreboard players set @a score 0"}},{"text":" 清空得分后将无法恢复！你确定要这么干吗?  此操作需要管理员权限.","color":"red"}]
-
-
-
+execute as @a if score @s settings matches 12 run tellraw @s [{"text":"[点击此处确认]","color":"yellow","click_event": {action:"run_command","command":"/tag @s add clear_score"}},{"text":" 清空得分后将无法恢复！你确定要这么干吗?  此操作需要管理员权限.","color":"red"}]
+execute as @a[tag=clear_score] run scoreboard objectives remove score
+execute as @a[tag=clear_score] run scoreboard objectives add score dummy "得分"
+execute as @a[tag=clear_score] run scoreboard objectives setdisplay sidebar score
+execute as @a[tag=clear_score] run tag @s remove clear_score
 
 scoreboard players set @a settings 0
