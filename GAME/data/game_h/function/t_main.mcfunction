@@ -66,6 +66,7 @@ scoreboard players set start1 settings 0
 
 #OTHER
 scoreboard players enable @a settings
+function game_h:fancy_visiual
 
 
 ##wall
