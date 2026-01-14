@@ -5,5 +5,4 @@ title @a title {"text":"游戏结束!","color":"gold","bold":true}
 title @a subtitle [{selector:"@a[tag=!spectator]",color:"yellow"},{"text":"  获胜!","color":"gold"}]
 schedule function game_h:title/win1 80
 scoreboard players set time DISCOUNT 0
-effect clear @a[tag=!exclude]
 tag @a remove spectator
