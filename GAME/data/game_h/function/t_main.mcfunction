@@ -1,4 +1,6 @@
 
+effect give @a minecraft:saturation infinite 1 true
+
 
 #hacker是笨蛋
 #LOCATE&SETBLOCK
@@ -80,7 +82,6 @@ execute as @e[type=minecraft:armor_stand] run scoreboard players remove @s DISCO
 execute as @e[type=minecraft:armor_stand] if score @s DISCOUNT matches ..0 run scoreboard players remove @s life 1
     #RESET
 execute as @e[type=minecraft:armor_stand] if score @s DISCOUNT matches ..0 run scoreboard players set @s DISCOUNT 5
-execute if score time DISCOUNT matches 0 run effect clear @a[tag=!exclude]
 #execute if score 1s DISCOUNT matches 0 run scoreboard players set 1s DISCOUNT 5
 
 
@@ -126,11 +127,14 @@ tag @a remove start_setting
 schedule function game_h:reset 1t replace
 execute as @a if score @s settings matches 1 run function game_h:random_team
  #2 开始游戏
-execute as @a if score @s settings matches 2 run tp @a 4.00 1.00 133.00
-execute as @a if score @s settings matches 2 run gamemode adventure @a
-execute as @a if score @s settings matches 2 run scoreboard players set start_delay DISCOUNT 61
-execute as @a if score @s settings matches 2 run place template minecraft:platform_1 -2 0 127
-execute as @a if score @s settings matches 2 run tag @a remove spectator
+execute as @a if score @s settings matches 2 if score playercount C matches 2 run tp @a 4.00 1.00 133.00
+execute as @a if score @s settings matches 2 if score playercount C matches 2 run gamemode adventure @a
+execute as @a if score @s settings matches 2 if score playercount C matches 2 run scoreboard players set start_delay DISCOUNT 61
+execute as @a if score @s settings matches 2 if score playercount C matches 2 run place template minecraft:platform_1 -2 0 127
+execute as @a if score @s settings matches 2 if score playercount C matches 2 run tag @a remove spectator
+
+execute as @a if score @s settings matches 2 if score playercount C matches 1 run tellraw @a [{"text":"无法开始游戏，场上玩家不足2人!","color":"red"}]
+
   #2.1 title
   execute if score start_delay DISCOUNT matches 61 run title @a title [{"text":"墙壁将在","color":"gold"},{"text":" 3 ","color":"red"},{"text":"秒后推出!","color":"gold"}]
   execute if score start_delay DISCOUNT matches 61 as @a at @s run playsound ui.button.click player @a ~ ~ ~
