@@ -50,7 +50,7 @@ tag @a remove exclude
 scoreboard players set time DISCOUNT 0
 effect clear @a[tag=!exclude]
 tag @a remove spectator
-tp @a 0 1 0
+#tp @a 0 1 0
 
 
 
