@@ -93,6 +93,7 @@ execute as @e[type=minecraft:armor_stand] if score @s DISCOUNT matches ..0 run s
 #faild
 execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run summon lightning_bolt
 execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run tag @s add spectator
+execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run scoreboard players remove @s score 3
 execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run tp @s 2.39 33.00 134.67
 
 #end game
