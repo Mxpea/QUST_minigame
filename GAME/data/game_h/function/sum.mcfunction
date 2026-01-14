@@ -32,7 +32,7 @@ execute as @e[type=minecraft:bat,tag=10] at @s run clone -2 1 180 9 5 180 ~ ~ ~
 execute as @e[type=minecraft:bat,tag=10] at @s run summon minecraft:armor_stand ~ ~4 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
 
 execute as @e[type=minecraft:bat,tag=11] at @s run clone -2 1 182 9 5 182 ~ ~ ~
-execute as @e[type=minecraft:bat,tag=11] at @s run summon minecraft:armor_stand ~3 ~4 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
+execute as @e[type=minecraft:bat,tag=11] at @s run summon minecraft:armor_stand ~5 ~4 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
 
 execute as @e[type=minecraft:bat,tag=12] at @s run clone -2 1 184 9 5 184 ~ ~ ~
 execute as @e[type=minecraft:bat,tag=12] at @s run summon minecraft:armor_stand ~ ~2 ~ {Tags:["poz1","this"],NoGravity:true,Invisible:true}
