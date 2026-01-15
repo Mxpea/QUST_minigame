@@ -53,6 +53,11 @@ tag @a remove spectator
 #tp @a 0 1 0
 
 
+execute positioned 2 35 143 as @e[type=minecraft:glow_item_frame,limit=1,sort=nearest,distance=..2] run kill @s
+summon minecraft:glow_item_frame 2.50 35.50 143.97 {Invisible: 0b, ItemDropChance: 1.0f, Item: {id: "minecraft:filled_map", count: 1, components: {"minecraft:map_id": 34}}, OnGround: 0b, Air: 300s, ItemRotation: 0b, block_pos: [I; 2, 35, 143], Invulnerable: 0b, Fixed: 0b, Motion: [0.0d, 0.0d, 0.0d], Rotation: [180.0f, 0.0f], Facing: 2b, Fire: 0s, PortalCooldown: 0, fall_distance: 0.0d}
+
+
+
 
 tellraw @a [{"text": "[","color": "gold"},{"text": "MINIGAME","color": "green"},{"text": "] ","color": "gold"},{"text": "重载成功","color": "blue"}]
 tellraw @a [{"text": "[","color": "gold"},{"text": "MINIGAME","color": "green"},{"text": "] ","color": "gold"},{"text": "POWERED BY ","color": "gold"},{"text": "[MMMAPI]","color": "yellow",click_event: {action:"open_url",url:"https://github.com/Mxpea/Mxpea-s-Multiplayer-Motion-API"}}]

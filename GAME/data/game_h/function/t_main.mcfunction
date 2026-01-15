@@ -77,7 +77,6 @@ execute if score cylc DISCOUNT matches 1 if score time DISCOUNT matches 1..3661 
 execute if score cylc DISCOUNT matches 1 if score time DISCOUNT matches 1..3661 run function game_h:random_effect
 execute if score cylc DISCOUNT matches 0 run scoreboard players set cylc DISCOUNT 40
 
-
 #DISCOUNT
 execute if score S_button DISCOUNT matches 1.. run scoreboard players remove S_button DISCOUNT 1
 execute if score time DISCOUNT matches 1.. run scoreboard players remove time DISCOUNT 1
@@ -119,7 +118,7 @@ execute as @a[gamemode=adventure] at @s if block ~ ~ ~ structure_void run tp @s 
 execute if score time DISCOUNT matches 1 run schedule function game_h:end_game 6s
 execute if score time DISCOUNT matches 1 run tag @a[tag=player] add winner
     #场上仅剩一人结束
-execute store result score playercount C run execute if entity @a[tag=player,limit=2]
+execute store result score playercount C run execute if entity @a[tag=!spectator,limit=2]
 execute if score playercount C matches 0 if score time DISCOUNT matches 1.. run function game_h:end_game
 execute if score playercount C matches 1 if score time DISCOUNT matches 1.. run tag @a[tag=player] add winner
 
@@ -132,7 +131,7 @@ execute if score playercount C matches 1 if score time DISCOUNT matches 1.. run 
 #???
 setblock 2 33 126 minecraft:oak_wall_sign[facing=south,waterlogged=false]{back_text:{color:"black",has_glowing_text:0b,messages:["","","",""]},components:{},front_text:{color:"black",has_glowing_text:0b,messages:["↑","gay","",""]},is_waxed:0b}
 setblock 2 34 125 minecraft:player_head[rotation=8]{profile:{name:"this_hacker"}}
-
+setblock 2 34 143 minecraft:oak_wall_sign[facing=north,waterlogged=false]{back_text:{color:"black",has_glowing_text:0b,messages:["","","",""]},components:{},front_text:{color:"black",has_glowing_text:0b,messages:["数据包作者","Mxpea/Aurelith","(其实是一个人)",""]},is_waxed:0b}
 
 
 
@@ -156,6 +155,8 @@ execute as @a if score @s settings matches 2 if score playercount C matches 2 ru
 execute as @a if score @s settings matches 2 if score playercount C matches 2 run tag @a add player
 
 execute as @a if score @s settings matches 2 if score playercount C matches 1 run tellraw @a [{"text":"无法开始游戏,场上玩家不足2人!","color":"red"}]
+
+execute as @a if score @s settings matches 2 if score playercount C matches 0 run tellraw @a [{"text":"如果你看到这一条,说明有地方出了问题,请联系支持人员取得帮助.","color":"red"}]
 
   #2.1 title
   execute if score start_delay DISCOUNT matches 61 run title @a title [{"text":"墙壁将在","color":"gold"},{"text":" 3 ","color":"red"},{"text":"秒后推出!","color":"gold"}]
