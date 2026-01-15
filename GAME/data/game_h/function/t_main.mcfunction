@@ -11,7 +11,9 @@ tellraw @a[tag=debug_h] [{"text": "[run push]        ","color":"red","click_even
 tellraw @a[tag=debug_h] [{"text": "==================================","color": "gold"}]
 tag @a remove debug_h
 
-
+#after join
+execute as @a[tag=!player] at @s[tag=!spectator] if score time DISCOUNT matches 1.. run tp @s 2.39 33.00 134.67
+execute as @a[tag=!player] at @s[tag=!spectator] if score time DISCOUNT matches 1.. run tag @s add spectator
 
 
 
