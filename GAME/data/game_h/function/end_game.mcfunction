@@ -6,4 +6,5 @@ title @a subtitle [{selector:"@a[tag=winner]",color:"yellow"},{"text":"  获胜!
 schedule function game_h:title/win1 80
 scoreboard players set time DISCOUNT 0
 tag @a remove spectator
+tag @a remove player
 tag @a remove winner

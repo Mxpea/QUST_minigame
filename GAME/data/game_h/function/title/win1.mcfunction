@@ -3,4 +3,4 @@ execute as @a run tellraw @s [{"text":"你的最终得分为: ","color":"yellow"
 
 effect clear @a[tag=!exclude]
 tag @a remove spectator
-tp @a 0 1 0
+tp @a 20 93 -56
